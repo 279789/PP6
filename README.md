@@ -102,9 +102,9 @@ Place your completed `print.sh` in `solutions/` and commit. Then link it here:
 
 #### Reflection Questions
 
-1. **What is the difference between `printf` and `echo` in Bash?**
-2. **What is the role of `~/.bashrc` in your shell environment?*The .bashrc is nothing other than an shellscript, that is always accessable from the command line. Normal use is to put scripts in here that shauld be easily executable*
-3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`).**
+1. **What is the difference between `printf` and `echo` in Bash? * While both echo and printf are commands to display string onto the terminal, echo is simpler to script, but has also less control on the output then printf. *
+2. **What is the role of `~/.bashrc` in your shell environment? *The .bashrc is nothing other than an shellscript, that is always accessable from the command line. Normal use is to put scripts in here that shauld be easily executable*
+3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`). *The main differenc betwee sourcing and executing is the "place" where it's done. For example, executing is done in a new shell(sub-shell)all things that are done have no influence on the actual shell, while sourcing is done in the same shell, that did the command. That means changes have an influence on the actual shell. *
 
 ---
 
