@@ -97,13 +97,13 @@ print_escape
 Place your completed `print.sh` in `solutions/` and commit. Then link it here:
 
 ```
-[print.sh](https://github.com/YOUR_USERNAME/REPO_NAME/blob/main/solutions/print.sh)
+[print.sh](https://github.com/279789/PP6/blob/master/solutions/print.sh)
 ```
 
 #### Reflection Questions
 
 1. **What is the difference between `printf` and `echo` in Bash?**
-2. **What is the role of `~/.bashrc` in your shell environment?**
+2. **What is the role of `~/.bashrc` in your shell environment?*The .bashrc is nothing other than an shellscript, that is always accessable from the command line. Normal use is to put scripts in here that shauld be easily executable*
 3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`).**
 
 ---
