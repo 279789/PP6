@@ -194,7 +194,7 @@ int main(void) {
 **Solution Reference**
 
 ```
-[print.c](https://github.com/YOUR_USERNAME/REPO_NAME/blob/main/solutions/print.c)
+[print.c](https://github.com/279789/PP6/blob/master/solutions/print.c)
 ```
 
 #### Reflection Questions
@@ -265,8 +265,11 @@ if __name__ == "__main__":
 
 #### Reflection Questions
 
-1. **Is Python’s print behavior closer to Bash, Assembly, or C? Explain.**
-2. **Can you inspect a Python script’s binary with `objdump`? Why or why not?**
+1. **Is Python’s print behavior closer to Bash, Assembly, or C? Explain.** *I think it's somewhere between bash and c,
+ but more on the bash side. The print behavior is more simplified than the behaviour from c, but also while giving the user more function.
+This is my firsttime useing python, but it feels somehow similar to bash.*
+
+2. **Can you inspect a Python script’s binary with `objdump`? Why or why not?** *Thats not possible, because the python script is not a classical script. It's source code, thats rendered on a vm. It's interpreted on runtime.*
 
 ---
 
