@@ -102,9 +102,9 @@ Place your completed `print.sh` in `solutions/` and commit. Then link it here:
 
 #### Reflection Questions
 
-1. **What is the difference between `printf` and `echo` in Bash? * While both echo and printf are commands to display string onto the terminal, echo is simpler to script, but has also less control on the output then printf. *
-2. **What is the role of `~/.bashrc` in your shell environment? *The .bashrc is nothing other than an shellscript, that is always accessable from the command line. Normal use is to put scripts in here that shauld be easily executable*
-3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`). *The main differenc betwee sourcing and executing is the "place" where it's done. For example, executing is done in a new shell(sub-shell)all things that are done have no influence on the actual shell, while sourcing is done in the same shell, that did the command. That means changes have an influence on the actual shell. *
+1. **What is the difference between `printf` and `echo` in Bash?** *While both echo and printf are commands to display string onto the terminal, echo is simpler to script, but has also less control on the output then printf.*
+2. **What is the role of `~/.bashrc` in your shell environment?** *The .bashrc is nothing other than an shellscript, that is always accessable from the command line. Normal use is to put scripts in here that shauld be easily executable*
+3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`).** *The main difference between sourcing and executing is the "place" where it's done. For example, executing is done in a new shell(sub-shell)all things that are done have no influence on the actual shell, while sourcing is done in the same shell, that did the command. That means changes have an influence on the actual shell.*
 
 ---
 
@@ -154,14 +154,14 @@ _start:
 **Solution Reference**
 
 ```
-[print.s](https://github.com/YOUR_USERNAME/REPO_NAME/blob/main/solutions/print.s)
+[print.s](https://github.com/279789/PP6/blob/master/solutions/print.s)
 ```
 
 #### Reflection Questions
 
-1. **What is a file descriptor and how does the OS use it?**
-2. **How can you obtain or duplicate a file descriptor for another resource (e.g., a file or socket)?**
-3. **What might happen if you use an invalid file descriptor in a syscall?**
+1. **What is a file descriptor and how does the OS use it?** *A filedescriptor is a very important part of the syscall, it's main purpuse is to define The in and or output. For example, if you want to print a message to the terminal with asm, you have to define the fd 1 , wich stands for standardout, wich is the terminal buffer. I think a easy short description of the fd is: Where should I do the syscall*
+2. **How can you obtain or duplicate a file descriptor for another resource (e.g., a file or socket)?** *If you want to execute your syscall to a file, for example, reading from a file , or writing at a file., you have to open the file first, save the file descriptor of the file to the ram and than use the address of the ram as your file descriptor for your read or write syscall.*
+3. **What might happen if you use an invalid file descriptor in a syscall?** *If you use an invalide fd, than there is not defined where the syscall should be executed. For example if you add an fd of 99 to an write syscall, nothing happens, because the syscall has wrong information about where it should be executed.*
 
 ---
 
@@ -199,9 +199,33 @@ int main(void) {
 
 #### Reflection Questions
 
-1. **Use `objdump -d` on `print_c` to find the assembly instructions corresponding to your `printf` calls.**
-2. **Why is the syntax written differently from GAS assembly? Compare NASM vs. GAS notation.**
-3. **How could you use `fprintf` to write output both to `stdout` and to a file instead? Provide example code.**
+1. **Use `objdump -d` on `print_c` to find the assembly instructions corresponding to your `printf` calls.** *
+2. **Why is the syntax written differently from GAS assembly? Compare NASM vs. GAS notation.** *To understand why there are more than one syntax is, that the assambler language is heavily dependet on the architecture of your prozessor. Gas uses an kind of old syntyx from AT&T, it's also used in some older generation assemblers. NASM uses the intel syntax wich is used by the majority of assemblers. But today, modern versions of Gas also support the intel syntax.
+3. **How could you use `fprintf` to write output both to `stdout` and to a file instead? Provide example code.** I'm honestly, i found no way to write from one fprintf command to two "outputs" without a "custom function". So I did it in two lines. : #include <stdio.h>
+
+int main(void) {
+        printf("Hello there this is C.\n\n");
+        printf("Integer: %i\tFloat: %f\t String:%s\n\n",1,2.1,"Mulm");
+        puts("I didn't know puts before.\n");
+
+        //Test section for Reflection Question 3
+        FILE *test;
+        test = fopen("test.txt","w");
+        fprintf(test,"Super hat geklappt\n");
+        fclose(test);
+        fprintf(stdout,"Super hat geklappt\n");
+
+
+
+
+
+
+        return 0;
+
+
+
+}
+~                                                                                                                                         ~                                                                                                                                         ~                                                                                                                                         ~                              
 
 ---
 
