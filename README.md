@@ -118,7 +118,7 @@ Place your completed `print.sh` in `solutions/` and commit. Then link it here:
    * Binaries/executables (e.g., `print`, `print_c`)
    * Any editor or OS-specific files
      Commit this `.gitignore` file.
-     **Explain:** Why should compiled artifacts and binaries not be committed to a Git repository?
+     **Explain:** Why should compiled artifacts and binaries not be committed to a Git repository? *The main reason for that is, that it wouldn't make that much sens to do this. One reason for that is, that compiled code is OS and architecture dependent. For example, if you compile some code on a 64 bit processor, that code would not work on a 32 bit prozessor. If you work on a big project with many other people, and all would upload their binaries, much memory is waisted and the overview gets lost.
 2. In `./solutions/`, create a file named `print.s` using the template below.
 3. Define a message in the `.data` section (e.g., `msg: .ascii "Hello from GAS!\n"`, `len = . - msg`).
 4. In the `.text` section’s `_start` symbol, invoke `sys_write` (syscall 4) and then `sys_exit` (syscall 1) via `int $0x80`.
