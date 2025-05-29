@@ -269,10 +269,10 @@ if __name__ == "__main__":
  but more on the bash side. The print behavior is more simplified than the behaviour from c, but also while giving the user more function.
 This is my firsttime useing python, but it feels somehow similar to bash.*
 
-###Point of 90 Minutes
 
 3. **Can you inspect a Python script’s binary with `objdump`? Why or why not?** *Thats not possible, because the python script is not a classical script. It's source code, thats rendered on a vm. It's interpreted on runtime.*
 
 ---
 
-**Remember:** Stop working after **90 minutes** and document where you stopped.
+**Remember:** Stop working after **90 minutes** and document where you stopped. 
+Did it in 80 Minutes.
